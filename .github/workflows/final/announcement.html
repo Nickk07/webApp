@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Latest Announcements</title>
+</head>
+<body>
+    <h1>Latest Announcements</h1>
+
+    <h2>Create Announcement</h2>
+    <form id="createAnnouncementForm">
+        <label for="announcementTitle">Title:</label>
+        <input type="text" id="announcementTitle" name="title" required>
+        <label for="announcementContent">Content:</label>
+        <textarea id="announcementContent" name="content" required></textarea>
+        <button type="submit">Create</button>
+    </form>
+
+    <h2>Get Announcement</h2>
+    <form id="getAnnouncementForm">
+        <label for="announcementId">Announcement ID:</label>
+        <input type="text" id="announcementId" name="announcementId" required>
+        <button type="submit">Get</button>
+    </form>
+
+    <h2>Update Announcement</h2>
+    <form id="updateAnnouncementForm">
+        <label for="updateAnnouncementId">Announcement ID:</label>
+        <input type="text" id="updateAnnouncementId" name="announcementId" required>
+        <label for="updateAnnouncementTitle">New Title:</label>
+        <input type="text" id="updateAnnouncementTitle" name="title" required>
+        <label for="updateAnnouncementContent">New Content:</label>
+        <textarea id="updateAnnouncementContent" name="content" required></textarea>
+        <button type="submit">Update</button>
+    </form>
+
+    <h2>Delete Announcement</h2>
+    <form id="deleteAnnouncementForm">
+        <label for="deleteAnnouncementId">Announcement ID:</label>
+        <input type="text" id="deleteAnnouncementId" name="announcementId" required>
+        <button type="submit">Delete</button>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>

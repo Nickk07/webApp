@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Account Management</title>
+</head>
+<body>
+    <h1>Account Management</h1>
+
+    <h2>Create Account</h2>
+    <form id="createAccountForm">
+        <label for="createUsername">Username:</label>
+        <input type="text" id="createUsername" name="username" required>
+        <label for="createPassword">Password:</label>
+        <input type="password" id="createPassword" name="password" required>
+        <button type="submit">Create</button>
+    </form>
+
+    <h2>Get Account</h2>
+    <form id="getAccountForm">
+        <label for="getUsername">Username:</label>
+        <input type="text" id="getUsername" name="username" required>
+        <button type="submit">Get</button>
+    </form>
+
+    <h2>Update Account</h2>
+    <form id="updateAccountForm">
+        <label for="updateUsername">Username:</label>
+        <input type="text" id="updateUsername" name="username" required>
+        <label for="updatePassword">New Password:</label>
+        <input type="password" id="updatePassword" name="password" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <h2>Delete Account</h2>
+    <form id="deleteAccountForm">
+        <label for="deleteUsername">Username:</label>
+        <input type="text" id="deleteUsername" name="username" required>
+        <button type="submit">Delete</button>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>

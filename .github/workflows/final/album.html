@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Album Management</title>
+</head>
+<body>
+    <h1>Album Management</h1>
+
+    <h2>Create Album</h2>
+    <form id="createAlbumForm">
+        <label for="albumName">Album Name:</label>
+        <input type="text" id="albumName" name="albumName" required>
+        <label for="albumDescription">Description:</label>
+        <input type="text" id="albumDescription" name="albumDescription" required>
+        <button type="submit">Create</button>
+    </form>
+
+    <h2>Get Album</h2>
+    <form id="getAlbumForm">
+        <label for="albumId">Album ID:</label>
+        <input type="text" id="albumId" name="albumId" required>
+        <button type="submit">Get</button>
+    </form>
+
+    <h2>Update Album</h2>
+    <form id="updateAlbumForm">
+        <label for="updateAlbumId">Album ID:</label>
+        <input type="text" id="updateAlbumId" name="albumId" required>
+        <label for="updateAlbumName">New Album Name:</label>
+        <input type="text" id="updateAlbumName" name="albumName" required>
+        <label for="updateAlbumDescription">New Description:</label>
+        <input type="text" id="updateAlbumDescription" name="albumDescription" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <h2>Delete Album</h2>
+    <form id="deleteAlbumForm">
+        <label for="deleteAlbumId">Album ID:</label>
+        <input type="text" id="deleteAlbumId" name="albumId" required>
+        <button type="submit">Delete</button>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>

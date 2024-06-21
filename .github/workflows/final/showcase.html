@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Showcase</title>
+</head>
+<body>
+    <h1>Showcase</h1>
+
+    <h2>Accounts</h2>
+    <table id="accountsTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Accounts data will be inserted here -->
+        </tbody>
+    </table>
+
+    <h2>Albums</h2>
+    <table id="albumsTable">
+        <thead>
+            <tr>
+                <th>Album ID</th>
+                <th>Album Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Albums data will be inserted here -->
+        </tbody>
+    </table>
+
+    <h2>Announcements</h2>
+    <table id="announcementsTable">
+        <thead>
+            <tr>
+                <th>Announcement ID</th>
+                <th>Title</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Announcements data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch accounts
+            fetch('/get-accounts')
+                .then(response => response.json())
+                .then(data => {
+                    const accountsTableBody = document.querySelector('#accountsTable tbody');
+                    data.forEach(account => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${account.username}</td>
+                            <td>${account.password}</td>
+                        `;
+                        accountsTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+
+            // Fetch albums
+            fetch('/get-albums')
+                .then(response => response.json())
+                .then(data => {
+                    const albumsTableBody = document.querySelector('#albumsTable tbody');
+                    data.forEach(album => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${album.albumId}</td>
+                            <td>${album.albumName}</td>
+                            <td>${album.albumDescription}</td>
+                        `;
+                        albumsTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+
+            // Fetch announcements
+            fetch('/get-announcements')
+                .then(response => response.json())
+                .then(data => {
+                    const announcementsTableBody = document.querySelector('#announcementsTable tbody');
+                    data.forEach(announcement => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${announcement.announcementId}</td>
+                            <td>${announcement.title}</td>
+                            <td>${announcement.content}</td>
+                        `;
+                        announcementsTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
